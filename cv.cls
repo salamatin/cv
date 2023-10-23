@@ -185,7 +185,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \makeatletter
 \newcommand\makeheader{
   \begin{center}
-    \begin{tabu} to 1\textwidth { X[l,m] X[2,c,m] X[r,m] }
+    \begin{tabu} to 1\textwidth { X[l,m] X[2,-0.5c,m] X[r,m] }
       \printaddress & \printname & \printcontacts \\
     \end{tabu}
   \end{center}
@@ -222,7 +222,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \notblank{#2}{\toggletrue{lefttitledefined}}{}
   \notblank{#3}{\toggletrue{centertitledefined}}{}
   \notblank{#4}{\toggletrue{righttitledefined}}{}
-  \ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
+  \ifboolexpr{togl {lefttitledefined} and togl {centertitledefined} and togl {righttitledefined}}{
     \begin{tabu} to 1\textwidth { X[l,p] X[c,p] X[r,p] }
       \textbf{#2} & \textbf{#3} & \textbf{#4} \\
     \end{tabu}
@@ -233,7 +233,19 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
       }
     }
   }{
+    \ifboolexpr{togl {lefttitledefined} or togl {righttitledefined}}{
+    \begin{tabu} to 1\textwidth { X[2,l,p] X[r,p] }
+      \textbf{#2} & \textbf{#4} \\
+    \end{tabu}
+    % Add space according to the specidied number of lines
+    \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
+      \ifnumcomp{#1}{=}{2}{\vspace*{\afterdoublelinesubsectionheaderspace}}{
+        \vspace*{\aftermultilinesubsectionheaderspace}
+      }
+    }
+  }{
     \vspace*{\afteremptysubsectionheaderspace}
+  }
   }
   \togglefalse{lefttitledefined}
   \togglefalse{centertitledefined}

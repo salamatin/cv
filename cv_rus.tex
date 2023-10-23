@@ -1,0 +1,87 @@
+%% The MIT License (MIT)
+%%
+%% Copyright (c) 2015 Daniil Belyakov
+%%
+%% Permission is hereby granted, free of charge, to any person obtaining a copy
+%% of this software and associated documentation files (the "Software"), to deal
+%% in the Software without restriction, including without limitation the rights
+%% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%% copies of the Software, and to permit persons to whom the Software is
+%% furnished to do so, subject to the following conditions:
+%%
+%% The above copyright notice and this permission notice shall be included in all
+%% copies or substantial portions of the Software.
+%%
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%% SOFTWARE.
+
+% The font could be set to Windows-specific Calibri by using the 'calibri' option
+\documentclass[]{mcdowellcv}
+
+% For hyperlinks
+\usepackage{hyperref}
+
+\makeatletter
+\let\\\@raggedtwoe@savedcr% Restore original functionality of \\
+\makeatother
+
+
+% Set applicant's personal data for header
+\name{Андрей Саламатин}
+\address{\href{mailto:Salamatin.Andrey+job@gmail.com}{Salamatin.Andrey@gmail.com} \linebreak +375 (29) 985-96-83}
+\contacts{\href{https://www.linkedin.com/in/salamatin/}{linkedin.com/in/salamatin}}
+
+\begin{document}
+\raggedright
+
+	% Print the header
+	\makeheader
+	
+	% Print the content
+	\begin{cvsection}{Опыт работы}
+		\begin{cvsubsection}{Senior Test Automation Engineer}{EPAM Systems}{апрель 2022 - март 2023}
+		\end{cvsubsection}
+		\begin{cvsubsection}{Test Automation Engineer}{}{март 2015 - апрель 2022}
+			\begin{itemize}
+				\item Разрабатывал (Java) и поддерживал автоматизированные тесты на 7+ аутсорс-проектах для англоязычных клиентов в области e-commerce, транспорта и здравоохранения.
+				\item Покрывал автотестами UI и бэкенд (API, Azure Service Bus \& Event Hub) веб-приложений, валидацию XML, PDF, XLSX, e-mail рассылки, логирования и т.д.
+				\item На 3-х долгосрочных проектах был AQA стрим-лидом, отвечая за планирование, распределение задач, код-ревью в команде из 2-3 автоматизаторов, коммуникацию с заказчиком и т.п.
+				\newline
+				\item Приняв устаревшие и на ~80\% нерабочие тесты плохого качества, в короткий срок перед важным релизом привёл их в порядок.
+				\item В рамках инициативы Test as a Service отвечал за запуск автоматизированного тестирования для внутреннего приложения клиента: написал базовый TA-фреймворк, смок-тесты и стартовую документацию. Поддерживал работу 3-4 крауд-тестеров, рецензировал и интегрировал их код.
+				\item Внедрил в тестовый фреймворк интеграцию с JIRA для экспорта Cucumber-сценариев и импорта результатов в Test Executions.
+				\item Добавил во фреймворк возможность использовать для создания данных интеграционную шину вместо UI, что привело к сокращению времени выполнения до 300\% и большей стабильности тестов
+				\item По проектной необходимости в кратчайший срок освоил JavaScript в достаточной cтепени, чтобы заменить профильного автоматизатора и покрывать тестами Node.js-микросервисы.
+				\item Автоматизировал несколько бизнес-критичных процессов, которые ранее должны были выполняться командой поддержки вручную несколько раз в день.
+				\item Взяв ответственность за обучение англоязычного тестировщика со стороны заказчика со слабым знанием Java, помог ему достичь хорошего качества кода и сократить продолжительность код-ревью.			
+				\item Осуществил многочисленные исправления в коде тестовых фреймворков.
+				
+			\end{itemize}
+		\end{cvsubsection}
+		\begin{cvsubsection}{Software Testing Engineer}{}{февраль 2013 - март 2015}
+			\begin{itemize}
+				\item Автоматизировал создание большого объёма тестовых данных с помощью Selenium Webdriver.
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
+	\begin{cvsection}{Образование}
+		\begin{cvsubsection}{Карагандинский государственный технический университет}{}{2005-2010}
+		«Вычислительная техника и программное обеспечение», бакалавриат
+		\end{cvsubsection}
+	\end{cvsection}	
+	\begin{cvsection}{Языки и инструменты}
+		\begin{cvsubsection}{}{}{}	
+			\begin{itemize}
+				\item Java
+				\item Selenium for Java, Serenity BDD, Apickli, Selenide. Jenkins Pipelines, Azure DevOps, Report Portal
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
+	
+\end{document}
+
